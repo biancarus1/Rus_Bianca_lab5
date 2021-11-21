@@ -276,12 +276,19 @@ namespace Rus_Bianca_lab5
         private void btnNew_Click(object sender, RoutedEventArgs e)
         {
             action = ActionState.New;
+            ReInitialize();
+            BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
+            BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
+            SetValidationBinding();
+
 
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             action = ActionState.Edit;
+            BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
+            BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
             SetValidationBinding();
 
         }
